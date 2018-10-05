@@ -1,0 +1,41 @@
+<ion-view title="{{profile.title}}">
+  <ion-nav-bar class="bar-stw">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content>
+      <div class="item profile" id="{{profile.id}}">
+        <div class="profile-avatar">
+          <img src="{{profile.source}}" class="avatar">
+        </div>
+        <h1><span class="shadow">{{profile.title}}</span></h1>
+        <div class="country">{{profile.pays}}</div>
+        <div class="url-ext"><a href="http://{{profile.url}}">{{profile.url}}</a></div>
+        <div id="images_sur_server">
+          <div class="image-list-thumb" ng-repeat="image in items"> <img ng-src="{{image.src}}" ng-click="showImages($index)" /></div>
+        </div>
+        <div class="description"><p>{{profile.description}}</p></div>
+        <div id="tracks">
+          <ion-audio-track ng-repeat="track in tracks" track="track">
+            <div class="card">
+                <div class="item">
+                    <h2>{{track.title}}</h2>
+                    <ion-audio-controls class="control-left">
+                        <a class="button button-icon icon" ion-audio-play></a>
+                        <ion-spinner icon="ios" style="position: relative; top: 8px; left: 4px"></ion-spinner>
+                    </ion-audio-controls>
+                </div>
+                <!-- <div class="item item-divider">
+                    <ion-audio-progress-bar track="track" display-time></ion-audio-progress-bar>
+                </div> -->
+            </div>
+          </ion-audio-track>
+          <div class="card">
+            <div class="item item-divider">
+                <ion-audio-progress-bar display-time display-info></ion-audio-progress-bar>
+            </div>
+          </div>
+        </div>
+      </div>
+     <!--  <leaflet center="girlmap" markers="markers" event-broadcast="events" paths="paths" defaults="defaults" url-hash-center="yes" id="map" tiles="tiles"></leaflet> --> <!-- tiles="tiles" -->
+  </ion-content>
+</ion-view>

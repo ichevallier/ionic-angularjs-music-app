@@ -1,0 +1,19 @@
+<ion-view title="Stw" >
+  <ion-nav-bar class="bar-stw">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content class="bck" padding="true">
+    <div class="container">
+      <div ng-controller="listeCtrl" ng-hide="custom" id="heartBeatList">
+        <ion-list>
+          <ion-item ng-repeat="profile in profiles" class="item item-icon-right" ui-sref="app.profiles.detail({profile:profile.id})">
+            <img src="{{profile.source}}" class="avatar-list">
+            <span ng-class="{done: profile.done}">{{profile.title}}</span>
+            <i class="icon ion-ios7-arrow-right"></i>
+          </ion-item>
+        </ion-list>
+      </div><!--  -->
+      
+    </div>
+  </ion-content>
+</ion-view>
